@@ -1,0 +1,5 @@
+mqtt-url = tcp://HOST:1883
+influxdb-url = http://localhost:8086
+influxdb-token =
+influxdb-bucket =
+influxdb-org =
