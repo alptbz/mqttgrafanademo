@@ -1,4 +1,4 @@
-#  Example Java Gradle Application featuring MQTT and Grafana 
+# Example Java Gradle Application featuring MQTT and Grafana
 
 ## Requirements
  - Java JDK 17
@@ -55,8 +55,18 @@ executing `podman machine start` returns
 
 ### Run container directly
 
-```powershell
-podman run -dt --pod=grafana-influx --name=grafana -p 3000:3000 docker.io/grafana/grafana
-podman run -dt --pod=grafana-influx --name=influx -p 8086:8086 docker.io/influxdb:latest 
+
+
+# Run Grafana, InfluxDB and Telegraf in ubuntu
+
+```bash
+podman pod create -n grafana-influx -h grafana-influx -p 3000:3000,8086:8086
+podman run -dt --pod=grafana-influx --name=grafana docker.io/grafana/grafana
+podman run -dt --pod=grafana-influx --name=influx docker.io/influxdb:latest 
 ```
+
+## Telegraf
+Get Telegraf config within influx WebUI
+
+Install according to https://docs.influxdata.com/telegraf/v1.21/introduction/installation/
 
