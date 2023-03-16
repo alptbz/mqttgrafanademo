@@ -58,7 +58,7 @@ executing `podman machine start` returns
 
 
 # Run Grafana, InfluxDB and Telegraf in ubuntu
-
+Ubuntu 20.04 LTS: Install podman using this manual: https://www.cyberithub.com/how-to-install-podman-on-ubuntu-20-04-lts-step-by-step/
 ```bash
 podman pod create -n grafana-influx -h grafana-influx -p 3000:3000,8086:8086
 podman run -dt --pod=grafana-influx --name=grafana docker.io/grafana/grafana
