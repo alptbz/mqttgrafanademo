@@ -25,6 +25,11 @@ cp config.properties.example config.properties
 - Go to `src/main/ch.alptbz.mqttgrafanademo/Main`, right click file, select run
 
 ## Run Grafana
+
+You can run Grafana & InfluxDB in the Cloud for free or you can selfhost. 
+ - https://grafana.net
+ - https://www.influxdata.com/ 
+
 ### Requirements
  - Install podman from https://github.com/containers/podman/releases
  - Check out installation instructions: https://podman.io/getting-started/installation
@@ -53,7 +58,6 @@ executing `podman machine start` returns
  - Remove VM with `wsl --unregister podman-machine-default`
  - Recreate using `podman machine init`
 
-### Run container directly
 
 
 
@@ -69,4 +73,5 @@ podman run -dt --pod=grafana-influx --name=influx docker.io/influxdb:latest
 Get Telegraf config within influx WebUI
 
 Install according to https://docs.influxdata.com/telegraf/v1.21/introduction/installation/
+
 
